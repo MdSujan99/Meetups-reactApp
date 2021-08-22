@@ -1,0 +1,35 @@
+.container *{
+   font-size: 1.5rem;
+}
+.container{   
+   font-size: 2rem;
+   display: flex;
+   /* align-items: center; */
+   justify-content: center;
+   height: 80vh;
+}
+.newMeetupForm{
+   padding: 10px;
+   height: 100%;
+   width: 50vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+.newMeetupForm div{
+   width: 100%;
+}
+.newMeetupForm input{
+   font-size: 1rem;
+   height: 50px;
+   padding: 10px;
+   border-radius: 10px;
+   outline: none;
+}
+button{
+   background-color: rgb(0, 54, 153);
+   color: aliceblue;
+}
+button:active{
+   background-color: rgb(0, 54, 153);
+}
