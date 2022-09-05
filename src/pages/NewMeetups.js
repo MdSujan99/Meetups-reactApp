@@ -18,7 +18,9 @@ function NewMeetupsPage() {
         },
       }
     ).then(() => {
-      //go back to home page
+      // history helps changing the webpage
+      // works like location in vanila js
+      //go back to home page if the push succeeds
       history.replace("/");
     });
   }

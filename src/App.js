@@ -11,7 +11,6 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/" exact>
-            {" "}
             <AllMeetupsPage />
           </Route>
           <Route path="/new-meetup">
