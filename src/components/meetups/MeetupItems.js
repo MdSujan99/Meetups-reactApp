@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useHistory } from "react-router-dom";
 
 import classes from "./MeetupItems.module.css";
 import Card from "../ui/Card";
@@ -22,6 +23,27 @@ function MeetupItems(props) {
     }
   }
 
+  function removeMeetup() {
+    console.log("this item should be removed");
+    // const history = useHistory();
+    fetch(
+      "https://meetupsreactapp-edb34-default-rtdb.firebaseio.com/" + // url to firebase realtime db
+        "meetups/" + // the table
+        props.id + // the row
+        ".json",
+      {
+        method: "DELETE",
+        mode: "cors",
+        // body: JSON.stringify(meetupData), // convert a normal js object to json
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(() => {
+      console.log("the item with id" + props.id + " is removed");
+    });
+  }
+
   return (
     <Card>
       <li className={classes.itemContainer}>
@@ -38,6 +60,7 @@ function MeetupItems(props) {
             <button onClick={toggleFavorites}>
               {isItemFav ? "Remove From Favorites" : "Add to Favorites"}
             </button>
+            <button onClick={removeMeetup}>Remove</button>
           </div>
         </div>
       </li>

@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 function NewMeetupsPage() {
   const history = useHistory();
+
   function addMeetupHandler(meetupData) {
     const tableName = "meetups";
     // send http request to firebase db
